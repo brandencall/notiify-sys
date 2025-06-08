@@ -91,7 +91,7 @@ int main() {
 }
 
 std::string readEmailFromFile() {
-    std::ifstream file("notifier/email_config.txt");
+    std::ifstream file("/home/brabs/Projects/notify_sys/notifier/email_config.txt");
     std::string email;
 
     if (file.is_open()) {

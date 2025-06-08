@@ -29,9 +29,10 @@ json checkPowerData() {
 
     char chargeBuffer[128];
     fgets(chargeBuffer, sizeof(chargeBuffer), chargingStatusPipe);
-    if (strstr(chargeBuffer, "Discharging") && battery > 70 && battery < 80) {
+    if (strstr(chargeBuffer, "Discharging") && battery > 75 && battery < 80) {
         powerJson["subject"] = "Server unplugged charging";
         powerJson["body"] = "The server is not plugged in! Battery: " + std::to_string(battery);
+        std::cout << "Her here here" << '\n';
         return powerJson;
     }
 

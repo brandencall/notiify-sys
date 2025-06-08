@@ -46,5 +46,7 @@ void setUpClientSocketAndSendString(std::string serializedData) {
 
     if (byteCount < 0) {
         std::cout << "Message not sent: " << serializedData;
+    } else {
+        std::cout << "Message sent: " << serializedData;
     }
 }
