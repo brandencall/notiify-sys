@@ -32,10 +32,7 @@ void setUpClientSocketAndSendString(std::string serializedData) {
 
     if (clientSocket == -1) {
         std::cout << "Error creating socket" << std::endl;
-    } else {
-        std::cout << "Socket is OK" << std::endl;
     }
-
     struct sockaddr_in clientService;
     clientService.sin_family = AF_INET;
     clientService.sin_port = htons(port);
@@ -44,8 +41,6 @@ void setUpClientSocketAndSendString(std::string serializedData) {
     if (connect(clientSocket, (sockaddr *)&clientService, sizeof(clientService)) == -1) {
         std::cout << "client coulnd't connect" << std::endl;
         close(clientSocket);
-    } else {
-        std::cout << "client connected OK" << std::endl;
     }
     int byteCount = send(clientSocket, serializedData.c_str(), serializedData.size(), 0);
 
